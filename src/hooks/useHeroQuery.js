@@ -1,17 +1,16 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
 const useHeroQuery = () => {
-  const { hero } = useStaticQuery(graphql`
+  const { allMdx } = useStaticQuery(graphql`
     {
-      hero: allMarkdownRemark {
+      allMdx(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
         edges {
           node {
             frontmatter {
-              title
-              greetings
               emoji
-              subtitlePrefix
-              subtitleHighlight
+              greetings
+              subtitle
+              title
             }
           }
         }
@@ -19,7 +18,7 @@ const useHeroQuery = () => {
     }
   `);
 
-  return hero.edges[0].node.frontmatter;
+  return allMdx.edges[0].node.frontmatter;
 };
 
 export default useHeroQuery;

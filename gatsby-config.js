@@ -1,4 +1,5 @@
 const config = require('./config');
+const theme = require('./src/styles/Theme');
 
 module.exports = {
   siteMetadata: {
@@ -9,6 +10,38 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Playfair Display`,
+            variants: [`400`],
+          },
+          {
+            family: `Lato`,
+            variants: [`300`],
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        // gatsbyRemarkPlugins: [
+        //   {
+        //     resolve: `gatsby-remark-images`,
+        //     options: {
+        //       maxWidth: 1000,
+        //       quality: 80,
+        //     },
+        //   },
+        // ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -16,17 +49,14 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,
         short_name: config.siteShortTitle,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: theme.colors.background,
+        theme_color: theme.colors.primary,
         display: `minimal-ui`,
         icon: config.siteIcon, // This path is relative to the root of the site.
       },
