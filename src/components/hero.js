@@ -17,7 +17,7 @@ const Hero = () => {
           <br />
           {title}
         </h1>
-        <h2>{subtitle}</h2>
+        <p>{subtitle}</p>
       </section>
     </ContentWrapper>
   );

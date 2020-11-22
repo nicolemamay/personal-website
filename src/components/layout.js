@@ -5,7 +5,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import Context from '../context/';
 import Theme from '../styles/Theme';
 import GlobalStyle from '../styles/GlobalStyle';
-// import Header from "./header"
+import Header from './header';
 // import Footer from "./footer"
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
@@ -19,8 +19,6 @@ const StyledLayoutWrapper = styled.div`
 `;
 
 const Layout = ({ children, splashScreen }) => {
-  // you can determine whether you want to have a splashScreen
-  // for each page in the respective page component
   // if splashScreen = false, we set isIntroDone = true to skip
   // the splashScreen
   const [state, setState] = useState({
@@ -32,11 +30,16 @@ const Layout = ({ children, splashScreen }) => {
       <Context.Provider value={{ state, setState }}>
         <ThemeProvider theme={Theme}>
           <GlobalStyle />
+          <Header />
           <main id="main-content">{children}</main>
         </ThemeProvider>
       </Context.Provider>
     </StyledLayoutWrapper>
   );
+};
+
+Layout.defaultProps = {
+  children: null,
 };
 
 Layout.propTypes = {

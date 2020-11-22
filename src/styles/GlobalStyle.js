@@ -49,6 +49,7 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-family: ${({ theme }) => theme.fonts.primary};
     font-weight: 300;
+    font-size: 1.5rem;
   }
 
   h1 {
@@ -65,15 +66,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-size: 1.25rem;
-    line-height: 2.25rem;
+    font-size: 2rem;
+    line-height: 3rem;
     letter-spacing: .1rem;
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: ${({ theme }) => theme.fonts.secondary};
     font-weight: 300;
+    margin: 0;
     color: ${({ theme }) => theme.colors.primary};
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-      font-size: 1.5rem;
-      line-height: 2.5rem;
+      font-size: 3rem;
+      line-height: 4rem;
     }
   }
 

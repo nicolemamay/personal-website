@@ -17,10 +17,12 @@ module.exports = {
 
   socialMedia: [
     {
+      id: 'linkedIn',
       name: 'Linkedin',
       url: '',
     },
     {
+      id: 'github',
       name: 'Github',
       url: '',
     },
@@ -37,17 +39,19 @@ module.exports = {
       //     url: "/#articles",
       // },
       {
+        id: 'aboutMe',
         name: 'About Me',
         url: '/#about',
+      },
+      {
+        id: 'contact',
+        name: 'Contact',
+        url: '/#contact',
       },
       // {
       //     name: "Projects",
       //     url: "/#projects",
       // },
     ],
-    button: {
-      name: 'Contact',
-      url: '/#contact',
-    },
   },
 };
