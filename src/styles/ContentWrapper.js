@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ContentWrapper = styled.div`
   max-width: ${({ theme }) => theme.pageWidth};
-  margin: 4rem auto 0 auto;
+  margin: 4rem auto 4rem auto;
   padding: 0 1.5rem;
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     padding: 0 2rem;

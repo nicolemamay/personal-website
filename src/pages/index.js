@@ -1,6 +1,7 @@
 import React from 'react';
 
 import About from '../components/about';
+import Contact from '../components/contact';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
 
@@ -9,6 +10,7 @@ const IndexPage = () => {
     <Layout splashScreen={false}>
       <Hero />
       <About />
+      <Contact />
     </Layout>
   );
 };

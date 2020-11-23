@@ -46,13 +46,6 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 
-  p {
-    font-family: ${({ theme }) => theme.fonts.primary};
-    font-weight: 300;
-    font-size: 1.25rem;
-    line-height: 2rem;
-  }
-
   h1 {
     font-size: 3rem;
     line-height: 4rem;
@@ -95,6 +88,30 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: 1.5rem;
     font-weight: 400;
+  }
+
+  p, .text-primary {
+    color: ${({ theme }) => theme.colors.primary};
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+
+  .text-secondary {
+    color: ${({ theme }) => theme.colors.secondary};
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: .25rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+  }
+
+  .text-underline {
+    text-decoration: underline;
+    text-decoration-color: ${({ theme }) => theme.colors.tertiary};
+    text-underline-position: under;
   }
 `;
 

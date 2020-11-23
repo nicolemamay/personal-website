@@ -20,7 +20,7 @@ const StyledNav = styled.nav`
   }
   .nav-link {
     font-size: 1rem;
-    letter-spacing: 0.12rem;
+    letter-spacing: 0.25rem;
     line-height: 2rem;
     text-align: center;
     text-transform: uppercase;

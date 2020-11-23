@@ -19,13 +19,13 @@ module.exports = {
     {
       id: 'linkedIn',
       name: 'Linkedin',
-      url: '',
+      url: 'https://www.linkedin.com/in/nicole-mamay/',
     },
-    {
-      id: 'github',
-      name: 'Github',
-      url: '',
-    },
+    // {
+    //   id: 'github',
+    //   name: 'Github',
+    //   url: '',
+    // },
     // {
     //   name: "Medium",
     //   url: ""
@@ -35,6 +35,7 @@ module.exports = {
   navLinks: {
     menu: [
       // {
+      //     id: 'articles',
       //     name: "Articles",
       //     url: "/#articles",
       // },
@@ -49,6 +50,7 @@ module.exports = {
         url: '/#contact',
       },
       // {
+      //     id: 'projects',
       //     name: "Projects",
       //     url: "/#projects",
       // },

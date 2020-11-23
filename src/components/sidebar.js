@@ -53,7 +53,7 @@ const StyledMenu = styled.nav`
   }
   .nav-link {
     font-size: 1.75rem;
-    letter-spacing: 0.12rem;
+    letter-spacing: 0.25rem;
     line-height: 4rem;
   }
 `;

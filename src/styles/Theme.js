@@ -1,9 +1,9 @@
 module.exports = {
   colors: {
-    primary: '#000000',
+    primary: '#242323',
     secondary: '#8F8F8F',
     tertiary: '#ED3E3B',
-    text: '#000000',
+    text: '#242323',
     background: '#ffffff',
   },
   breakpoints: {

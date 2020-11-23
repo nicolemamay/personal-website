@@ -14,7 +14,7 @@ const Hero = () => {
           <br />
           {title}
         </h1>
-        <p>{subtitle}</p>
+        <p className="text-secondary">{subtitle}</p>
       </ContentWrapper>
     </section>
   );
