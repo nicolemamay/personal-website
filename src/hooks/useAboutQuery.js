@@ -9,6 +9,13 @@ const useAboutQuery = () => {
             body
             frontmatter {
               title
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 800, quality: 90) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }

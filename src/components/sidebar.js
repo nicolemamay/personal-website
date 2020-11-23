@@ -53,7 +53,6 @@ const StyledMenu = styled.nav`
   }
   .nav-link {
     font-size: 1.75rem;
-    font-weight: 700;
     letter-spacing: 0.12rem;
     line-height: 4rem;
   }
@@ -88,8 +87,8 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 };
 
 Sidebar.propTypes = {
-  open: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
 };
 
 export default Sidebar;

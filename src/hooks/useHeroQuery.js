@@ -7,7 +7,6 @@ const useHeroQuery = () => {
         edges {
           node {
             frontmatter {
-              emoji
               greetings
               subtitle
               title

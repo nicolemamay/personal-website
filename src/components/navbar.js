@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 20rem;
+    width: 17rem;
     background: ${({ theme }) => theme.colors.background};
     a {
       color: ${({ theme }) => theme.colors.primary};
@@ -20,19 +20,19 @@ const StyledNav = styled.nav`
   }
   .nav-link {
     font-size: 1rem;
-    font-weight: 700;
     letter-spacing: 0.12rem;
+    line-height: 2rem;
     text-align: center;
     text-transform: uppercase;
     position: relative;
     &::before {
       transition: 200ms ease-out;
-      height: 0.1563rem;
+      height: 0.1rem;
       content: '';
       position: absolute;
-      background-color: ${({ theme }) => theme.colors.primary};
+      background-color: ${({ theme }) => theme.colors.tertiary};
       width: 0%;
-      bottom: -0.125rem;
+      bottom: -0.1rem;
     }
     &:hover::before {
       width: 100%;
