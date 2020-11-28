@@ -4,10 +4,11 @@ import About from '../components/about';
 import Contact from '../components/contact';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
+import { doUseSplashScreen } from '../../config';
 
 const IndexPage = () => {
   return (
-    <Layout splashScreen={false}>
+    <Layout doUseSplashScreen={doUseSplashScreen}>
       <Hero />
       <About />
       <Contact />

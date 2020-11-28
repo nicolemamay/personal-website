@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
+import styled from 'styled-components';
 
 import Context from '../context';
 import Burger from './Burger';

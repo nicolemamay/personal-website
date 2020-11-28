@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import Context from '../context/';
 import Theme from '../styles/Theme';
 import GlobalStyle from '../styles/GlobalStyle';
+
 import Header from './header';
 import Footer from './footer';
 
@@ -18,11 +19,10 @@ const StyledLayoutWrapper = styled.div`
   min-height: 100vh;
 `;
 
-const Layout = ({ children, splashScreen }) => {
-  // if splashScreen = false, we set isIntroDone = true to skip
-  // the splashScreen
+const Layout = ({ children, doUseSplashScreen }) => {
+  // if splashScreen = false, we set isIntroDone = true to skip the splashScreen
   const [state, setState] = useState({
-    isIntroDone: splashScreen ? false : true,
+    isIntroDone: doUseSplashScreen ? false : true,
   });
 
   return (
@@ -44,8 +44,8 @@ Layout.defaultProps = {
 };
 
 Layout.propTypes = {
-  children: PropTypes.any,
-  splashScreen: PropTypes.bool.isRequired,
+  children: PropTypes.node,
+  doUseSplashScreen: PropTypes.bool.isRequired,
 };
 
 export default Layout;
