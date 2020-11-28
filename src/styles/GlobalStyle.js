@@ -49,9 +49,9 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: 3rem;
     line-height: 4rem;
+    margin: 0 0 1rem 0;
     font-family: ${({ theme }) => theme.fonts.secondary};
     font-weight: 400;
-    margin: 0;
     color: ${({ theme }) => theme.colors.primary};
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       font-size: 5rem;
@@ -63,9 +63,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: 2rem;
     line-height: 3rem;
     letter-spacing: .1rem;
+    margin: 0 0 1rem 0;
     font-family: ${({ theme }) => theme.fonts.secondary};
     font-weight: 300;
-    margin: 0;
     color: ${({ theme }) => theme.colors.primary};
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       font-size: 3rem;
@@ -74,20 +74,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h3 {
-    font-size: 1.75rem;
-    font-family: ${({ theme }) => theme.fonts.secondary};
-    font-weight: 400;
-    line-height: 2.25rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: .1rem;
+    margin: 1rem 0;
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-weight: 300;
     color: ${({ theme }) => theme.colors.primary};
-    margin-bottom: 3rem;
-  }
-
-  h4 {
-    font-size: 1rem;
-    font-family: ${({ theme }) => theme.fonts.secondary};
-    font-weight: 400;
-    line-height: 1.5rem;
-    font-weight: 400;
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
   }
 
   p, .text-primary {

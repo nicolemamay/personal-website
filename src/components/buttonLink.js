@@ -31,7 +31,7 @@ const ButtonLink = ({ children, url, ...props }) => (
 );
 
 ButtonLink.propTypes = {
-  href: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 

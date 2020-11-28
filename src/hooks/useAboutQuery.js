@@ -9,6 +9,8 @@ const useAboutQuery = () => {
             body
             frontmatter {
               title
+              subheading
+              subheadingSecondary
             }
           }
         }

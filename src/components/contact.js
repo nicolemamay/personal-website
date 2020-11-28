@@ -47,7 +47,7 @@ const Contact = () => {
   const { image, subtitle, title } = useContactQuery();
 
   return (
-    <section>
+    <section id="contact">
       <StyledContentWrapper>
         <StyledAvatar className="avatar" fluid={image.childImageSharp.fluid} />
         <StyledBody>
