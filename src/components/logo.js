@@ -18,20 +18,20 @@ const StyledLogo = styled.div`
   user-select: auto !important;
 `;
 
-const Logo = ({ size, color }) => (
+const Logo = ({ color, size }) => (
   <StyledLogo color={color} size={size}>
     {siteShortTitle}
   </StyledLogo>
 );
 
 Logo.defaultProps = {
-  size: '',
   color: '',
+  size: '',
 };
 
 Logo.propTypes = {
-  size: PropTypes.string,
   color: PropTypes.string,
+  size: PropTypes.string,
 };
 
 export default Logo;
