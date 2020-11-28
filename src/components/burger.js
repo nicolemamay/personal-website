@@ -17,7 +17,7 @@ const StyledBurger = styled.button`
   &:focus {
     outline: none;
   }
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     display: none;
   }
   div {

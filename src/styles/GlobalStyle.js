@@ -102,7 +102,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     font-size: 1rem;
     letter-spacing: .25rem;
-    line-height: 1rem;
+    line-height: 1.75rem;
     text-transform: uppercase;
   }
 

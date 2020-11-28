@@ -11,8 +11,11 @@ import Divider from './divider';
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: start;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      flex-direction: row;
+    }
   }
 `;
 
@@ -56,16 +59,16 @@ const About = () => {
       subtitle: 'Redux',
     },
     {
-      name: 'jest',
-      subtitle: 'Jest',
-    },
-    {
       name: 'storybook',
       subtitle: 'Storybook',
     },
     {
       name: 'contentful',
       subtitle: 'Contentful',
+    },
+    {
+      name: 'jest',
+      subtitle: 'Jest',
     },
   ];
 

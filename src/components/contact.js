@@ -14,25 +14,37 @@ const { socialMedia } = config;
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      align-items: center;
+      flex-direction: row;
+    }
   }
 `;
 
 const StyledAvatar = styled(Img)`
   && {
-    max-height: 320px;
-    max-width: 100%;
-    width: 320px;
     border-radius: 50%;
     filter: grayscale(70%) contrast(1) brightness(100%);
+    max-height: 200px;
+    max-width: 100%;
+    width: 200px;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      margin-bottom: 0;
+      max-height: 325px;
+      width: 325px;
+    }
   }
 `;
 
-const StyledBody = styled(ContentWrapper)`
+const StyledBody = styled.div`
   && {
     display: flex;
     flex-direction: column;
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      margin: 0 64px;
+    }
   }
 `;
 
