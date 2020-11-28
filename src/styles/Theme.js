@@ -16,8 +16,8 @@ module.exports = {
     primary: 'Lato, sans-serif',
     secondary: 'Playfair Display, serif',
   },
-  borderRadius: '1rem',
-  pageWidth: '62.5rem',
-  headerHeight: '6.25rem',
-  footerHeight: '7.5rem',
+  borderRadius: '16px',
+  pageWidth: '1000px',
+  headerHeight: '100px',
+  footerHeight: '125px',
 };

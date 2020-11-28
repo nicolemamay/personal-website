@@ -7,8 +7,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    width: 100%;
+    font-size: 100%;
     height: 100%;
+    width: 100%;
   }
 
   body {
@@ -49,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: 3rem;
     line-height: 4rem;
-    margin: 0 0 1rem 0;
+    margin: 0 0 16px 0;
     font-family: ${({ theme }) => theme.fonts.secondary};
     font-weight: 400;
     color: ${({ theme }) => theme.colors.primary};
@@ -63,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 2rem;
     line-height: 3rem;
     letter-spacing: .1rem;
-    margin: 0 0 1rem 0;
+    margin: 0 0 16px 0;
     font-family: ${({ theme }) => theme.fonts.secondary};
     font-weight: 300;
     color: ${({ theme }) => theme.colors.primary};
@@ -77,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.5rem;
     line-height: 2rem;
     letter-spacing: .1rem;
-    margin: 1rem 0;
+    margin: 16px 0;
     font-family: ${({ theme }) => theme.fonts.primary};
     font-weight: 300;
     color: ${({ theme }) => theme.colors.primary};

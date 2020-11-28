@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 17rem;
+    width: 272px;
     background: ${({ theme }) => theme.colors.background};
     a {
       color: ${({ theme }) => theme.colors.primary};
@@ -27,12 +27,12 @@ const StyledNav = styled.nav`
     position: relative;
     &::before {
       transition: 200ms ease-out;
-      height: 0.1rem;
+      height: 2px;
       content: '';
       position: absolute;
       background-color: ${({ theme }) => theme.colors.tertiary};
       width: 0%;
-      bottom: -0.1rem;
+      bottom: -2px;
     }
     &:hover::before {
       width: 100%;

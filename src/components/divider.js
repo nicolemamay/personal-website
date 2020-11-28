@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 const StyledDivider = styled.hr`
   && {
-    height: 0.25rem;
+    height: 4px;
     background-color: #ed3e3b;
     border: none;
-    width: 12rem;
-    margin: 2rem 0;
+    width: 192px;
+    margin: 32px 0;
   }
 `;
 

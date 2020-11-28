@@ -8,8 +8,8 @@ const StyledBurger = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: 32px;
+  height: 32px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -21,10 +21,10 @@ const StyledBurger = styled.button`
     display: none;
   }
   div {
-    width: 2rem;
-    height: 0.25rem;
+    width: 32px;
+    height: 4px;
     background: ${({ theme }) => theme.colors.primary};
-    border-radius: 0.625rem;
+    border-radius: 1px;
     transition: all 0.3s ease-in-out;
     position: relative;
     transform-origin: 1px;

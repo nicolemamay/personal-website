@@ -6,8 +6,9 @@ const StyledIcon = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   width: 30%;
+  min-width: 150px;
 `;
 
 // https://medium.com/@erickhoury/react-dynamically-importing-svgs-and-render-as-react-component-b764b6475896

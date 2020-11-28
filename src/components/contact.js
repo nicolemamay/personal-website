@@ -21,9 +21,9 @@ const StyledContentWrapper = styled(ContentWrapper)`
 
 const StyledAvatar = styled(Img)`
   && {
-    max-height: 20rem;
+    max-height: 320px;
     max-width: 100%;
-    width: 20rem;
+    width: 320px;
     border-radius: 50%;
     filter: grayscale(70%) contrast(1) brightness(100%);
   }

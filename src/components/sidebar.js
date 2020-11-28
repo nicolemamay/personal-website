@@ -46,7 +46,7 @@ const StyledMenu = styled.nav`
   background: ${({ theme }) => theme.colors.background};
   height: 100vh;
   width: 55%;
-  padding: 11rem 2rem 2rem 2rem;
+  padding: 176px 32px 32px 32px;
   margin-left: auto;
   a {
     color: ${({ theme }) => theme.colors.primary};
