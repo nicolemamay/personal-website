@@ -1,63 +1,23 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import Img from 'gatsby-image';
-import { motion, useAnimation } from 'framer-motion';
-import styled from 'styled-components';
+import { useAnimation } from 'framer-motion';
 
+import config from '../../../config';
 import Context from 'src/context';
 import useContactQuery from 'src/hooks/useContactQuery';
 import useIsOnScreen from 'src/hooks/useIsOnScreen';
-import ContentWrapper from 'src/styles/ContentWrapper';
 
 import ButtonLink from 'src/components/ButtonLink/ButtonLink';
 import Divider from 'src/components/Divider/Divider';
 
-import config from '../../../config';
+import {
+  StyledAvatar,
+  StyledBody,
+  StyledContentWrapper,
+  StyledSocial,
+} from './Contact.styled';
 
 const { socialMedia } = config;
-
-const StyledContentWrapper = styled(ContentWrapper)`
-  && {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      align-items: center;
-      flex-direction: row;
-    }
-  }
-`;
-
-const StyledAvatar = motion.custom(styled.div`
-  && .avatar {
-    border-radius: 50%;
-    filter: grayscale(70%) contrast(1) brightness(100%);
-    max-height: 200px;
-    max-width: 100%;
-    width: 200px;
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      margin-bottom: 0;
-      max-height: 325px;
-      width: 325px;
-    }
-  }
-`);
-
-const StyledBody = motion.custom(styled.div`
-  && {
-    display: flex;
-    flex-direction: column;
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      margin: 0 64px;
-    }
-  }
-`);
-
-const StyledSocial = styled.div`
-  $$ {
-    display: flex;
-    flex-direction: row;
-  }
-`;
 
 const Contact = () => {
   const hasSocialMediaLinks = !!socialMedia && socialMedia.length > 0;

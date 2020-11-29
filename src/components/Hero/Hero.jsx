@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import styled from 'styled-components';
 
 import Context from 'src/context';
 import useHeroQuery from 'src/hooks/useHeroQuery';
@@ -8,12 +7,7 @@ import ContentWrapper from 'src/styles/ContentWrapper';
 
 import SplashScreen from 'src/components/SplashScreen/SplashScreen';
 
-const StyledSubtitle = styled.p`
-  max-width: 300px;
-  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-    max-width: none;
-  }
-`;
+import { StyledSubtitle } from './Hero.styled';
 
 const Hero = () => {
   const { greetings, subtitle, title } = useHeroQuery();

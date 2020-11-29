@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 import Context from 'src/context';
 import Theme from 'src/styles/Theme';
@@ -9,15 +9,12 @@ import GlobalStyle from 'src/styles/GlobalStyle';
 import Header from 'src/components/Header/Header';
 import Footer from 'src/components/Footer/Footer';
 
+import { StyledLayoutWrapper } from './Layout.styled';
+
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]');
 }
-
-const StyledLayoutWrapper = styled.div`
-  width: 100%;
-  min-height: 100vh;
-`;
 
 const Layout = ({ children, doUseSplashScreen }) => {
   // if splashScreen = false, we set isIntroDone = true to skip the splashScreen

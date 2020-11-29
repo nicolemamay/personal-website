@@ -1,40 +1,11 @@
 import React, { useEffect, useContext } from 'react';
 import Helmet from 'react-helmet';
 import { motion, useAnimation } from 'framer-motion';
-import styled from 'styled-components';
 
 import Context from 'src/context';
-
 import Logo from 'src/components/Logo/Logo';
 
-const StyledSplashScreen = styled(motion.div)`
-  align-items: center;
-  background-color: ${({ theme }) => theme.colors.primary};
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  left: 0%;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 5;
-  .logo-wrapper {
-    align-items: center;
-    display: flex;
-    height: 4rem;
-    justify-content: center;
-    position: relative;
-  }
-  .backdrop {
-    background-color: ${({ theme }) => theme.colors.primary};
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 6;
-  }
-`;
+import { StyledSplashScreen } from './SplashScreen.styled';
 
 const SplashScreen = () => {
   const { state, setState } = useContext(Context);

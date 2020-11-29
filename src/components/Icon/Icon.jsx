@@ -1,15 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const StyledIcon = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  width: 30%;
-  min-width: 135px;
-`;
+import { StyledIcon } from './Icon.styled';
 
 // https://medium.com/@erickhoury/react-dynamically-importing-svgs-and-render-as-react-component-b764b6475896
 const Icon = ({ name, size, subtitle }) => {

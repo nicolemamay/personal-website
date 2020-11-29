@@ -1,53 +1,23 @@
 import React, { Fragment, useContext, useEffect, useRef } from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { motion, useAnimation } from 'framer-motion';
-import styled from 'styled-components';
+import { useAnimation } from 'framer-motion';
 
+import config from '../../../config';
 import Context from 'src/context';
 import useAboutQuery from 'src/hooks/useAboutQuery';
 import useIsOnScreen from 'src/hooks/useIsOnScreen';
-import ContentWrapper from 'src/styles/ContentWrapper';
 
 import Icon from 'src/components/Icon/Icon';
 import Divider from 'src/components/Divider/Divider';
 
-import config from '../../../config';
+import {
+  StyledContentWrapper,
+  StyledBody,
+  StyledHeading,
+  StyledIcons,
+} from './About.styled';
 
 const { icons } = config;
-
-const StyledContentWrapper = styled(ContentWrapper)`
-  && {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      flex-direction: row;
-    }
-  }
-`;
-
-const StyledHeading = motion.custom(styled.div`
-  && {
-    display: flex;
-    flex-direction: column;
-    padding-right: 4rem;
-  }
-`);
-
-const StyledBody = motion.custom(styled.div`
-  && {
-    display: flex;
-    flex-direction: column;
-  }
-`);
-
-const StyledIcons = styled.div`
-  && {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-`;
 
 const About = () => {
   const { subheading, subheadingSecondary, title, body } = useAboutQuery();
