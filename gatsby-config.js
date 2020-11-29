@@ -10,9 +10,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-root-import`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -24,15 +24,6 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        // gatsbyRemarkPlugins: [
-        //   {
-        //     resolve: `gatsby-remark-images`,
-        //     options: {
-        //       maxWidth: 1000,
-        //       quality: 80,
-        //     },
-        //   },
-        // ],
       },
     },
     {
@@ -40,6 +31,21 @@ module.exports = {
       options: {
         rule: {
           include: /\.inline\.svg$/,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.nicolemamay.com',
+        resolveEnv: () => process.env.GATSBY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
         },
       },
     },

@@ -1,26 +1,24 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import config from '../../../config';
-import List from 'src/components/List/List';
-import { StyledNav } from './Navbar.styled';
+import { StyledNavbarList, StyledNavLink } from './Navbar.styled';
 
 const { navLinks } = config;
 
 const Navbar = () => {
   const { menu } = navLinks;
   return (
-    <StyledNav role="navigation">
-      <List role="menubar">
+    <nav role="navigation">
+      <StyledNavbarList role="menubar">
         {menu.map(({ id, name, url }) => (
           <li key={id} role="none">
-            <Link className="nav-link" role="menuitem" to={url}>
+            <StyledNavLink role="menuitem" to={url}>
               {name}
-            </Link>
+            </StyledNavLink>
           </li>
         ))}
-      </List>
-    </StyledNav>
+      </StyledNavbarList>
+    </nav>
   );
 };
 

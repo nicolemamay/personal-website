@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 export const StyledBackdrop = styled.div`
   && {
@@ -47,13 +48,14 @@ export const StyledMenu = styled.nav`
     margin-left: auto;
     padding: 176px 24px 32px 24px;
     width: 55%;
-    a {
-      color: ${({ theme }) => theme.colors.primary};
-    }
-    .nav-link {
-      font-size: 1.5rem;
-      letter-spacing: 0.18rem;
-      line-height: 4rem;
-    }
+  }
+`;
+
+export const StyledMenuLink = styled(Link)`
+  && {
+    color: ${({ theme }) => theme.colors.primary};
+    font-size: 1.5rem;
+    letter-spacing: 0.18rem;
+    line-height: 4rem;
   }
 `;
