@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero renders default 1`] = `
+<div>
+  <section>
+    <div
+      class="sc-bdfBwQ dMFlpw"
+    >
+      <div
+        style="opacity: 0; transform: translateY(20px) translateZ(0);"
+      >
+        <h1>
+          Test greeting,
+          <br />
+          Test title
+        </h1>
+        <p
+          class="sc-jSgupP dScaXo text-secondary"
+        >
+          Test subtitle
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Hero renders splash screen 1`] = `
+<div>
+  <section>
+    <div
+      class="sc-eCssSg kOKYJQ"
+      style="opacity: 0;"
+    >
+      <div
+        class="sc-hKgILt kwoswD"
+      >
+        <div
+          class="sc-dlfnbm eDIRJk"
+          style="height: 100%;"
+        />
+        <div
+          class="sc-gsTCUz kPOeUf"
+          color="white"
+        >
+          nm.
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

@@ -10,3 +10,7 @@ public
 
 # Mac files
 .DS_Store
+
+# Test related files
+/coverage.data
+/coverage/

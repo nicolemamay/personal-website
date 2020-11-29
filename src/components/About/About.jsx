@@ -19,9 +19,13 @@ import {
 
 const { icons } = config;
 
-const About = () => {
-  const { subheading, subheadingSecondary, title, body } = useAboutQuery();
-  const { isIntroDone } = useContext(Context).state;
+export const PureAbout = ({
+  body,
+  isIntroDone,
+  subheading,
+  subheadingSecondary,
+  title,
+}) => {
   // Required for animation - start after the splashScreen sequence is done
   const headingControls = useAnimation();
   const bodyControls = useAnimation();
@@ -96,6 +100,33 @@ const About = () => {
         </StyledBody>
       </StyledContentWrapper>
     </section>
+  );
+};
+
+PureAbout.defaultProps = {
+  isIntroDone: null,
+};
+
+PureAbout.propTypes = {
+  body: PropTypes.string.isRequired,
+  isIntroDone: PropTypes.bool,
+  subheading: PropTypes.string.isRequired,
+  subheadingSecondary: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+const About = () => {
+  const { body, subheading, subheadingSecondary, title } = useAboutQuery();
+  const { isIntroDone } = useContext(Context).state;
+
+  return (
+    <PureAbout
+      body={body}
+      isIntroDone={isIntroDone}
+      subheading={subheading}
+      subheadingSecondary={subheadingSecondary}
+      title={title}
+    />
   );
 };
 
