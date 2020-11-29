@@ -11,6 +11,10 @@ import ContentWrapper from '../styles/ContentWrapper';
 import Icon from './icon';
 import Divider from './divider';
 
+import config from '../../config';
+
+const { icons } = config;
+
 const StyledContentWrapper = styled(ContentWrapper)`
   && {
     display: flex;
@@ -76,42 +80,11 @@ const About = () => {
     isIntroDone,
   ]);
 
-  const iconsSkills = [
-    {
-      name: 'javascript',
-      subtitle: 'JavaScript',
-    },
-    {
-      name: 'react',
-      subtitle: 'React',
-    },
-    {
-      name: 'redux',
-      subtitle: 'Redux',
-    },
-    {
-      name: 'storybook',
-      subtitle: 'Storybook',
-    },
-    {
-      name: 'contentful',
-      subtitle: 'Contentful',
-    },
-    {
-      name: 'jest',
-      subtitle: 'Jest',
-    },
-  ];
+  const skillsIcons = !!icons && icons.skills;
+  const learningIcons = !!icons && icons.learning;
 
-  const iconsLearning = [
-    {
-      name: 'typescript',
-      subtitle: 'TypeScript',
-    },
-  ];
-
-  const hasIconsSkills = !!iconsSkills && iconsSkills.length > 0;
-  const hasIconsLearning = !!iconsLearning && iconsLearning.length > 0;
+  const hasSkillsIcons = !!skillsIcons && skillsIcons.length > 0;
+  const hasLearningIcons = !!learningIcons && learningIcons.length > 0;
 
   return (
     <section id="about">
@@ -130,21 +103,21 @@ const About = () => {
           ref={bodyRef}
         >
           <MDXRenderer>{body}</MDXRenderer>
-          {hasIconsSkills && (
+          {hasSkillsIcons && (
             <Fragment>
               <h3>{subheading}</h3>
               <StyledIcons>
-                {iconsSkills.map(({ name, subtitle }) => (
+                {skillsIcons.map(({ name, subtitle }) => (
                   <Icon key={name} name={name} subtitle={subtitle} />
                 ))}
               </StyledIcons>
             </Fragment>
           )}
-          {hasIconsLearning && (
+          {hasLearningIcons && (
             <Fragment>
               <h3>{subheadingSecondary}</h3>
               <StyledIcons>
-                {iconsLearning.map(({ name, subtitle }) => (
+                {learningIcons.map(({ name, subtitle }) => (
                   <Icon key={name} name={name} subtitle={subtitle} />
                 ))}
               </StyledIcons>

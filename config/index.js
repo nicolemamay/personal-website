@@ -1,6 +1,40 @@
 module.exports = {
   author: '@nicolemamay',
   doUseSplashScreen: true,
+  icons: {
+    skills: [
+      {
+        name: 'javascript',
+        subtitle: 'JavaScript',
+      },
+      {
+        name: 'react',
+        subtitle: 'React',
+      },
+      {
+        name: 'redux',
+        subtitle: 'Redux',
+      },
+      {
+        name: 'storybook',
+        subtitle: 'Storybook',
+      },
+      {
+        name: 'contentful',
+        subtitle: 'Contentful',
+      },
+      {
+        name: 'jest',
+        subtitle: 'Jest',
+      },
+    ],
+    learning: [
+      {
+        name: 'typescript',
+        subtitle: 'TypeScript',
+      },
+    ],
+  },
   navLinks: {
     menu: [
       // {
