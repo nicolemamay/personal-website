@@ -14,18 +14,10 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-root-import`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Playfair Display`,
-            variants: [`400`],
-          },
-          {
-            family: `Lato`,
-            variants: [`300`],
-          },
-        ],
+        fonts: [`Playfair Display\:400`, `Lato\:300,600`],
+        display: 'swap',
       },
     },
     {

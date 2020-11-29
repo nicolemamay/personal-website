@@ -15,6 +15,7 @@ export const StyledNav = styled.nav`
     }
     .nav-link {
       font-size: 1rem;
+      font-weight: 600;
       letter-spacing: 0.25rem;
       line-height: 2rem;
       text-align: center;

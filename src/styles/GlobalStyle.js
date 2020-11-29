@@ -99,7 +99,7 @@ const GlobalStyle = createGlobalStyle`
   .text-secondary {
     color: ${({ theme }) => theme.colors.secondary};
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-weight: 300;
+    font-weight: 600;
     font-size: 1rem;
     letter-spacing: .25rem;
     line-height: 1.75rem;
