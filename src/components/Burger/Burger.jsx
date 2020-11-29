@@ -5,7 +5,11 @@ import { StyledBurger } from './Burger.styled';
 
 const Burger = ({ isOpen, onClick }) => (
   <StyledBurger
-    aria-controls="sidebar"
+    aria-controls="sidebar-menu"
+    aria-expanded={isOpen ? true : false}
+    aria-label={
+      isOpen ? 'Close sidebar navigation menu' : 'Open sidebar navigation menu'
+    }
     isOpen={isOpen}
     onClick={() => onClick(!isOpen)}
   >

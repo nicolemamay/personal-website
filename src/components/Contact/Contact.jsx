@@ -64,7 +64,11 @@ const Contact = () => {
           initial={{ opacity: 0, x: -20 }}
           ref={avatarRef}
         >
-          <Img className="avatar" fluid={image.childImageSharp.fluid} />
+          <Img
+            alt="Nicole Mamay avatar"
+            className="avatar"
+            fluid={image.childImageSharp.fluid}
+          />
         </StyledAvatar>
         <StyledBody
           animate={bodyControls}
