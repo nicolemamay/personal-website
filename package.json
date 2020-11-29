@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-portfolio-mamay",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "A one page portfolio using MDX",
+  "version": "1.0.0",
+  "author": "Nicole Mamay",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.21",
     "@mdx-js/react": "^1.6.21",
