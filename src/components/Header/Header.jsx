@@ -21,6 +21,11 @@ const Header = () => {
   // Required for animation - start after the splashScreen sequence is done
   const controls = useAnimation();
 
+  // Ensure we close the sidebar on browser resize
+  if (!isMobileOrTablet && isOpen) {
+    setIsOpen(false);
+  }
+
   useEffect(() => {
     if (isIntroDone) {
       controls.start({ opacity: 1, y: 0, transition: { delay: 0.2 } });
