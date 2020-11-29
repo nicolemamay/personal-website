@@ -7,12 +7,6 @@ import useHeroQuery from '../hooks/useHeroQuery';
 import ContentWrapper from '../styles/ContentWrapper';
 import SplashScreen from './splashScreen';
 
-// const StyledSection = motion.custom(styled.section`
-//   width: 100%;
-//   height: ${({ theme }) => theme.headerHeight};
-//   background: ${({ theme }) => theme.colors.background};
-// `);
-
 const StyledSubtitle = styled.p`
   max-width: 300px;
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
@@ -35,7 +29,7 @@ const Hero = () => {
     <section>
       {!isIntroDone && <SplashScreen />}
       <ContentWrapper>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={controls}>
+        <motion.div animate={controls} initial={{ opacity: 0, y: 20 }}>
           <h1>
             {greetings}
             <br />

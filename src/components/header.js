@@ -56,7 +56,7 @@ const Header = () => {
   }, [windowWidth]);
 
   return (
-    <StyledHeader initial={{ opacity: 0, y: -10 }} animate={controls}>
+    <StyledHeader animate={controls} initial={{ opacity: 0, y: -10 }}>
       <StyledContentWrapper>
         <Link to="/" aria-label="home">
           <Logo color="primary" size="2rem" />

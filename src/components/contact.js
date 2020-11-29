@@ -1,9 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useContext, useEffect, useRef } from 'react';
 import Img from 'gatsby-image';
+import { motion, useAnimation } from 'framer-motion';
+import styled from 'styled-components';
+
+import Context from '../context';
 
 import useContactQuery from '../hooks/useContactQuery';
+import useIsOnScreen from '../hooks/useIsOnScreen';
+
 import ContentWrapper from '../styles/ContentWrapper';
+
 import ButtonLink from './buttonLink';
 import Divider from './divider';
 
@@ -23,8 +29,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `;
 
-const StyledAvatar = styled(Img)`
-  && {
+const StyledAvatar = motion.custom(styled.div`
+  && .avatar {
     border-radius: 50%;
     filter: grayscale(70%) contrast(1) brightness(100%);
     max-height: 200px;
@@ -36,9 +42,9 @@ const StyledAvatar = styled(Img)`
       width: 325px;
     }
   }
-`;
+`);
 
-const StyledBody = styled.div`
+const StyledBody = motion.custom(styled.div`
   && {
     display: flex;
     flex-direction: column;
@@ -46,7 +52,7 @@ const StyledBody = styled.div`
       margin: 0 64px;
     }
   }
-`;
+`);
 
 const StyledSocial = styled.div`
   $$ {
@@ -56,13 +62,57 @@ const StyledSocial = styled.div`
 `;
 
 const Contact = () => {
+  const hasSocialMediaLinks = !!socialMedia && socialMedia.length > 0;
   const { image, subtitle, title } = useContactQuery();
+  const { isIntroDone } = useContext(Context).state;
+
+  // Required for animation - start after the splashScreen sequence is done
+  const avatarControls = useAnimation();
+  const bodyControls = useAnimation();
+
+  const avatarRef = useRef();
+  const bodyRef = useRef();
+
+  const isAvatarOnScreen = useIsOnScreen(avatarRef);
+  const isBodyOnScreen = useIsOnScreen(bodyRef);
+
+  useEffect(() => {
+    if (isIntroDone) {
+      if (isAvatarOnScreen) {
+        avatarControls.start({ opacity: 1, x: 0 });
+      }
+
+      if (isBodyOnScreen) {
+        bodyControls.start({ opacity: 1, y: 0 });
+      }
+    }
+  }, [
+    avatarControls,
+    bodyControls,
+    isAvatarOnScreen,
+    isBodyOnScreen,
+    isIntroDone,
+  ]);
+
+  if (!hasSocialMediaLinks) {
+    return null;
+  }
 
   return (
     <section id="contact">
       <StyledContentWrapper>
-        <StyledAvatar className="avatar" fluid={image.childImageSharp.fluid} />
-        <StyledBody>
+        <StyledAvatar
+          animate={avatarControls}
+          initial={{ opacity: 0, x: -20 }}
+          ref={avatarRef}
+        >
+          <Img className="avatar" fluid={image.childImageSharp.fluid} />
+        </StyledAvatar>
+        <StyledBody
+          animate={bodyControls}
+          initial={{ opacity: 0, y: 20 }}
+          ref={bodyRef}
+        >
           <Divider />
           <h2>{title}</h2>
           <p className="text-secondary">{subtitle}</p>

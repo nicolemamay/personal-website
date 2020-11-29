@@ -1,11 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect, useRef } from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { motion, useAnimation } from 'framer-motion';
 import styled from 'styled-components';
 
+import Context from '../context';
 import useAboutQuery from '../hooks/useAboutQuery';
+import useIsOnScreen from '../hooks/useIsOnScreen';
 import ContentWrapper from '../styles/ContentWrapper';
-import Icon from './icon';
 
+import Icon from './icon';
 import Divider from './divider';
 
 const StyledContentWrapper = styled(ContentWrapper)`
@@ -19,20 +22,20 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `;
 
-const StyledHeading = styled.div`
+const StyledHeading = motion.custom(styled.div`
   && {
     display: flex;
     flex-direction: column;
     padding-right: 4rem;
   }
-`;
+`);
 
-const StyledBody = styled.div`
+const StyledBody = motion.custom(styled.div`
   && {
     display: flex;
     flex-direction: column;
   }
-`;
+`);
 
 const StyledIcons = styled.div`
   && {
@@ -44,6 +47,34 @@ const StyledIcons = styled.div`
 
 const About = () => {
   const { subheading, subheadingSecondary, title, body } = useAboutQuery();
+  const { isIntroDone } = useContext(Context).state;
+  // Required for animation - start after the splashScreen sequence is done
+  const headingControls = useAnimation();
+  const bodyControls = useAnimation();
+
+  const headingRef = useRef();
+  const bodyRef = useRef();
+
+  const isHeadingOnScreen = useIsOnScreen(headingRef);
+  const isBodyOnScreen = useIsOnScreen(bodyRef);
+
+  useEffect(() => {
+    if (isIntroDone) {
+      if (isHeadingOnScreen) {
+        headingControls.start({ opacity: 1, x: 0 });
+      }
+
+      if (isBodyOnScreen) {
+        bodyControls.start({ opacity: 1, y: 0 });
+      }
+    }
+  }, [
+    bodyControls,
+    headingControls,
+    isBodyOnScreen,
+    isHeadingOnScreen,
+    isIntroDone,
+  ]);
 
   const iconsSkills = [
     {
@@ -85,11 +116,19 @@ const About = () => {
   return (
     <section id="about">
       <StyledContentWrapper>
-        <StyledHeading>
+        <StyledHeading
+          animate={headingControls}
+          initial={{ opacity: 0, x: -20 }}
+          ref={headingRef}
+        >
           <Divider />
           <h2>{title}</h2>
         </StyledHeading>
-        <StyledBody>
+        <StyledBody
+          animate={bodyControls}
+          initial={{ opacity: 0, y: 20 }}
+          ref={bodyRef}
+        >
           <MDXRenderer>{body}</MDXRenderer>
           {hasIconsSkills && (
             <Fragment>
