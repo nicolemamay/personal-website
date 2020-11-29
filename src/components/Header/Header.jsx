@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react';
+import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import { useAnimation } from 'framer-motion';
 
@@ -42,6 +43,8 @@ const Header = () => {
 
   return (
     <StyledHeader animate={controls} initial={{ opacity: 0, y: -10 }}>
+      {/* add blur class to body when sidebar is opened */}
+      <Helmet bodyAttributes={{ class: isOpen ? 'blur' : '' }} />
       <StyledContentWrapper>
         <Link to="/" aria-label="home">
           <Logo color="primary" size="2rem" />
