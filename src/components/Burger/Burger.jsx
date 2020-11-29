@@ -9,9 +9,9 @@ const Burger = ({ isOpen, onClick }) => (
     isOpen={isOpen}
     onClick={() => onClick(!isOpen)}
   >
-    <div />
-    <div />
-    <div />
+    <div className="burger-layer" />
+    <div className="burger-layer" />
+    <div className="burger-layer" />
   </StyledBurger>
 );
 

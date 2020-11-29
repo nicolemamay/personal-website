@@ -16,8 +16,9 @@ const Hero = () => {
   const controls = useAnimation();
 
   useEffect(() => {
-    if (isIntroDone)
+    if (isIntroDone) {
       controls.start({ opacity: 1, y: 0, transition: { delay: 0.4 } });
+    }
   }, [isIntroDone, controls]);
 
   return (

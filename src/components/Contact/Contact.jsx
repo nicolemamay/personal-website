@@ -37,11 +37,11 @@ const Contact = () => {
   useEffect(() => {
     if (isIntroDone) {
       if (isAvatarOnScreen) {
-        avatarControls.start({ opacity: 1, x: 0 });
+        avatarControls.start({ opacity: 1, x: 0, transition: { delay: 0.5 } });
       }
 
       if (isBodyOnScreen) {
-        bodyControls.start({ opacity: 1, y: 0 });
+        bodyControls.start({ opacity: 1, y: 0, transition: { delay: 0.5 } });
       }
     }
   }, [

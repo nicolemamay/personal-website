@@ -1,11 +1,15 @@
 import React, { useEffect, useContext } from 'react';
 import Helmet from 'react-helmet';
-import { motion, useAnimation } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
 
 import Context from 'src/context';
 import Logo from 'src/components/Logo/Logo';
 
-import { StyledSplashScreen } from './SplashScreen.styled';
+import {
+  StyledBackdrop,
+  StyledLogoWrapper,
+  StyledSplashScreen,
+} from './SplashScreen.styled';
 
 const SplashScreen = () => {
   const { state, setState } = useContext(Context);
@@ -35,14 +39,13 @@ const SplashScreen = () => {
       <Helmet
         bodyAttributes={{ class: !state.isIntroDone ? 'splashScreen' : '' }}
       />
-      <div className="logo-wrapper">
-        <motion.div
-          className="backdrop"
+      <StyledLogoWrapper>
+        <StyledBackdrop
           initial={{ height: '100%' }}
           animate={backdropControls}
         />
         <Logo color="white" size="48px" />
-      </div>
+      </StyledLogoWrapper>
     </StyledSplashScreen>
   );
 };
