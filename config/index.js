@@ -66,7 +66,7 @@ module.exports = {
   siteIcon: `src/images/gatsby-icon.png`, // Relative to gatsby-config file.
   siteLanguage: 'en_US',
   siteShortTitle: 'nm.', // Used as logo text in header, footer, and splash screen
-  siteTitle: 'Nicole Mamay Portfolio',
+  siteTitle: 'Nicole Mamay | Software Engineer',
   siteUrl: 'https://nicolemamay.com',
 
   // mediumRssFeed: "",
