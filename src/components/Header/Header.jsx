@@ -3,13 +3,14 @@ import { Link } from 'gatsby';
 import { motion, useAnimation } from 'framer-motion';
 import styled from 'styled-components';
 
-import Context from '../context';
-import Burger from './Burger';
-import { detectMobileAndTablet, isSSR } from '../utils/';
-import ContentWrapper from '../styles/ContentWrapper';
-import Logo from './logo';
-import Sidebar from './sidebar';
-import Navbar from './navbar';
+import Context from 'src/context';
+import { detectMobileAndTablet, isSSR } from 'src/utils';
+import ContentWrapper from 'src/styles/ContentWrapper';
+
+import Burger from 'src/components/Burger/Burger';
+import Logo from 'src/components/Logo/Logo';
+import Navbar from 'src/components/Navbar/Navbar';
+import Sidebar from 'src/components/Sidebar/Sidebar';
 
 const StyledHeader = motion.custom(styled.header`
   width: 100%;

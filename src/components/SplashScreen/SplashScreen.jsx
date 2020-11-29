@@ -3,9 +3,9 @@ import Helmet from 'react-helmet';
 import { motion, useAnimation } from 'framer-motion';
 import styled from 'styled-components';
 
-import Context from '../context/';
+import Context from 'src/context';
 
-import Logo from './logo';
+import Logo from 'src/components/Logo/Logo';
 
 const StyledSplashScreen = styled(motion.div)`
   align-items: center;

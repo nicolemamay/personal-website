@@ -2,10 +2,11 @@ import React, { useContext, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import styled from 'styled-components';
 
-import Context from '../context/';
-import useHeroQuery from '../hooks/useHeroQuery';
-import ContentWrapper from '../styles/ContentWrapper';
-import SplashScreen from './splashScreen';
+import Context from 'src/context';
+import useHeroQuery from 'src/hooks/useHeroQuery';
+import ContentWrapper from 'src/styles/ContentWrapper';
+
+import SplashScreen from 'src/components/SplashScreen/SplashScreen';
 
 const StyledSubtitle = styled.p`
   max-width: 300px;

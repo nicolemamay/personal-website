@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import ContentWrapper from '../styles/ContentWrapper';
-import Logo from './logo';
+import ContentWrapper from 'src/styles/ContentWrapper';
+
+import Logo from 'src/components/Logo/Logo';
 
 const StyledFooter = styled.footer`
   background: ${({ theme }) => theme.colors.primary};

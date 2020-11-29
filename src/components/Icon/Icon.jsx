@@ -21,7 +21,7 @@ const Icon = ({ name, size, subtitle }) => {
     const importIcon = async () => {
       try {
         const { default: namedImport } = await import(
-          `../images/icons/${name}.inline.svg`
+          `src/images/icons/${name}.inline.svg`
         );
         ImportedIconRef.current = namedImport;
       } catch {

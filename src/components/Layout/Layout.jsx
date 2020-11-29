@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 
-import Context from '../context/';
-import Theme from '../styles/Theme';
-import GlobalStyle from '../styles/GlobalStyle';
+import Context from 'src/context';
+import Theme from 'src/styles/Theme';
+import GlobalStyle from 'src/styles/GlobalStyle';
 
-import Header from './header';
-import Footer from './footer';
+import Header from 'src/components/Header/Header';
+import Footer from 'src/components/Footer/Footer';
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== 'undefined') {

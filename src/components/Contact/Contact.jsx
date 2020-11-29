@@ -3,17 +3,15 @@ import Img from 'gatsby-image';
 import { motion, useAnimation } from 'framer-motion';
 import styled from 'styled-components';
 
-import Context from '../context';
+import Context from 'src/context';
+import useContactQuery from 'src/hooks/useContactQuery';
+import useIsOnScreen from 'src/hooks/useIsOnScreen';
+import ContentWrapper from 'src/styles/ContentWrapper';
 
-import useContactQuery from '../hooks/useContactQuery';
-import useIsOnScreen from '../hooks/useIsOnScreen';
+import ButtonLink from 'src/components/ButtonLink/ButtonLink';
+import Divider from 'src/components/Divider/Divider';
 
-import ContentWrapper from '../styles/ContentWrapper';
-
-import ButtonLink from './buttonLink';
-import Divider from './divider';
-
-import config from '../../config';
+import config from '../../../config';
 
 const { socialMedia } = config;
 

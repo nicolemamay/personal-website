@@ -3,15 +3,15 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { motion, useAnimation } from 'framer-motion';
 import styled from 'styled-components';
 
-import Context from '../context';
-import useAboutQuery from '../hooks/useAboutQuery';
-import useIsOnScreen from '../hooks/useIsOnScreen';
-import ContentWrapper from '../styles/ContentWrapper';
+import Context from 'src/context';
+import useAboutQuery from 'src/hooks/useAboutQuery';
+import useIsOnScreen from 'src/hooks/useIsOnScreen';
+import ContentWrapper from 'src/styles/ContentWrapper';
 
-import Icon from './icon';
-import Divider from './divider';
+import Icon from 'src/components/Icon/Icon';
+import Divider from 'src/components/Divider/Divider';
 
-import config from '../../config';
+import config from '../../../config';
 
 const { icons } = config;
 
