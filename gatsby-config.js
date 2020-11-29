@@ -9,10 +9,29 @@ module.exports = {
     siteUrl: config.siteUrl,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-root-import`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-root-import`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: config.siteTitle,
+        short_name: config.siteShortTitle,
+        start_url: `/`,
+        background_color: theme.colors.background,
+        theme_color: theme.colors.primary,
+        display: `minimal-ui`,
+        icon: config.siteIcon, // This path is relative to the root of the site.
+      },
+    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -47,25 +66,6 @@ module.exports = {
             policy: [{ userAgent: '*', allow: '/' }],
           },
         },
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/src/content`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: config.siteTitle,
-        short_name: config.siteShortTitle,
-        start_url: `/`,
-        background_color: theme.colors.background,
-        theme_color: theme.colors.primary,
-        display: `minimal-ui`,
-        icon: config.siteIcon, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-styled-components`,
