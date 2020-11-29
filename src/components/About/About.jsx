@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useEffect, useRef } from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import PropTypes from 'prop-types';
 import { useAnimation } from 'framer-motion';
 
 import config from '../../../config';
